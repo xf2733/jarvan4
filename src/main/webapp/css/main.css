@@ -1,0 +1,118 @@
+body{padding:0px; 
+	margin: 0px;
+	}
+body,
+input,
+legend{
+	font-size: 18px;
+	font-family: adamina;
+	font-style: normal;
+	font-weight: 400;
+}
+body{background-color: #eee;
+	}
+a{color:#7a2;text-decoration:none;}
+a:hover{ color:#CC0;}
+em{color:#7a2;font-size:1.1em;font-weight:bold;font-style:normal;}
+
+#header{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100px;
+	width: 100%;
+	border-bottom: 1px solid #9F0;
+	background-color:#0080ff;
+	color: #006;
+}
+#LeftIndext{
+	position: absolute; 
+	top:100px; 
+	left:0px;
+	bottom: 0px;
+	width: 200px;
+	border-right: 10px solid #ccc;
+	overflow-y:auto;
+	background-color:#ffffff;
+}
+#RightIndext{
+	position: absolute;
+	top: 100px;
+	left:210px;
+	bottom: 0px;
+	right: 0px;
+	overflow-y:auto;
+	background-color:#ffffff;
+}
+#header>div{padding-left:50px;}
+h1.logo{float:left;}
+div.home{float:right; color:#fff;}
+div.home a{margin:auto 15px;}
+
+#RightIndext>div{margin:15px;}
+.Online ul li{list-style:none; display:inline-block; width:15%;}
+.ulogo{width:40px; height:40px;}
+
+#RightIndext table{margin:20px auto;}
+table{border-collapse:collapse; border:none;}
+table td{border-color:#333; border-style:solid;}
+td{text-align:center;}
+tr.header td{text-align:center; font-weight:bold; background-color:#ccc}
+
+
+/*login*/
+#login{
+	position:absolute;
+	width:500px;
+	top:0px;
+	bottom:0px;
+	left:30%;
+	height:100%;
+	background-color:#8080ff;
+	
+    color:#C93;
+}
+
+#login form{margin:100px 20px;}
+#login fieldset{padding:20px;}
+#login legend{
+	color: #F4F4F4;
+}
+input[type=text], 
+input[type=password],
+select,
+textarea{
+	width: 80%;
+	height: 30px;
+	border-radius: 5px;
+	margin: 10px;
+	padding: 2px 4px;
+	border: 2px solid #7a2;
+	background: #eee;
+}
+textarea{height:100px;}
+
+input:hover,
+select:hover,
+textarea:hover{
+	border-color: #009;
+}
+
+.btn{
+	display: inline-block;
+	border-radius: 1px;
+	width: 280px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background: #7a2;
+	color: #FFF;
+	border: none;
+	text-decoration: none;
+	vertical-align: middle;
+}
+.btn{margin:5px 10px;}
+.btn:hover{
+	background-color: #009;
+	color: #FFF;
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+	<mapper namespace="com.yuxiaoli.mapper.AddressMapper">
+		<resultMap type="com.yuxiaoli.pojo.Address" id="address">
+			<id column="address_id" property="address_id" /> 
+   			<result column="address" property="address" /> 
+   			<result column="address2" property="address2" /> 
+   			<result column="distict" property="distict" /> 
+   			<result column="city_id" property="city_id"/>
+   			<result column="postal_code" property="postal_code" /> 
+   			<result column="phone" property="phone" /> 
+   			<result column="last_update" property="last_update" /> 
+		</resultMap>
+		
+		
+		<select id="findAllAddress"  resultMap="address">
+			select * from address 
+		</select>
+		
+		<select id="findAddressById" parameterType="int" resultType="com.yuxiaoli.pojo.Address">
+			select * from address where address_id=#{id}
+		</select>
+		
+		
+	</mapper>

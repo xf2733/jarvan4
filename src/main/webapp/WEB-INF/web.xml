@@ -1,0 +1,66 @@
+
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+   
+    <!--加载spring容器 -->
+  	<context-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>/WEB-INF/classes/spring/applicationContext-*.xml</param-value>
+  	</context-param>
+  	
+  	
+  <!-- post乱码过虑器 -->
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+  <filter>
+    <filter-name>UserFilter</filter-name>
+    <filter-class>com.yuxiaoli.filter.UserFilter</filter-class>
+  </filter>
+  
+   <filter-mapping>
+	    <filter-name>UserFilter</filter-name>
+	    <url-pattern>/jsp/index.jsp</url-pattern>
+	    <url-pattern>/jsp/addCustomer.jsp</url-pattern>
+	    <url-pattern>/jsp/editCustomer.jsp</url-pattern>
+    </filter-mapping>
+  
+ <listener>
+  		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  	</listener>
+  
+  <servlet>
+  	<servlet-name>springmvc</servlet-name>
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  		 <init-param>
+  			<param-name>contextConfigLocation</param-name>
+  			<param-value>classpath:spring/springmvc.xml</param-value>
+  		</init-param> 
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>springmvc</servlet-name>
+  	<!-- 
+  		第一种：.action
+  		第二种：/  -所有的访问地址都由disparcherServlet解析
+  		第三种：/* -此配置方式不对，结果返回到jsp页面时，任然由disparcherServlet解析该jsp页面，找不到handler，从而会报错
+  	 -->
+  	<url-pattern>*.action</url-pattern>
+  </servlet-mapping>
+  
+ 
+  
+  
+</web-app>

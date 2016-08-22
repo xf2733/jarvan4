@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- 配置别名 -->
+	<typeAliases>
+		<package name="com.yuxiaoli.pojo"/>
+	</typeAliases>
+	
+	
+	<!-- 配置全局设置 -->
+	
+	<!-- 配置mappers
+		使用自动扫描，所以无需配置，但是要求mapper.xml与mapper.java 必须同名且在同一目录下
+	 -->
+	 <!-- <mappers >
+	 	<mapper resource="com/yuxiaoli/mapper/CustomerMapper.xml"/>
+	 	<mapper resource="com/yuxiaoli/mapper/AddressMapper.xml"/>
+	 </mappers> -->
+	
+	
+</configuration>

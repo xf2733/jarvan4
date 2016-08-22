@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+	<mapper namespace="com.yuxiaoli.mapper.CustomerMapper">
+		<resultMap type="com.yuxiaoli.pojo.Customer" id="customer">
+			<id column="customer_id" property="customer_id" /> 
+   			<result column="store_id" property="store_id" /> 
+   			<result column="first_name" property="first_name" /> 
+   			<result column="last_name" property="last_name" /> 
+   			<result column="email" property="email"/>
+   			<result column="address_id" property="address_id" /> 
+   			<result column="active" property="active" /> 
+   			<result column="create_date" property="create_date" /> 
+   			<result column="last_update" property="last_update" /> 
+		</resultMap>
+		
+		<select id="findCustomerByFirst_name" parameterType="java.lang.String" resultType="com.yuxiaoli.pojo.Customer">
+			select * from customer where first_name=#{first_name}
+		</select>
+		
+		<select id="findAllCutomer"  resultMap="customer">
+			select * from customer 
+		</select>
+		
+		<select id="findTotalCount" resultType="int">
+			select count(*) from customer
+		</select>
+		
+		<select id="findCustomerByid" parameterType="int" resultType="com.yuxiaoli.pojo.Customer">
+			select * from customer where customer_id=#{id}
+		</select>
+		
+		<insert id="addCustomer" parameterType="com.yuxiaoli.pojo.Customer">
+			insert into customer(first_name,last_name,email,address_id,store_id,create_date) values(#{first_name},#{last_name},#{email},#{address_id},#{store_id},#{create_date})
+		</insert>
+		
+		<update id="updateCustomer" parameterType="com.yuxiaoli.pojo.Customer" >
+			update customer set first_name=#{first_name},last_name=#{last_name},email=#{email},address_id=#{address_id}
+			where customer_id=#{customer_id}
+		</update>
+		
+		<update id="change">
+			SET FOREIGN_KEY_CHECKS=0
+		</update>
+		
+		<delete id="deleteCustomerById" parameterType="int">
+			delete from customer where customer_id=#{id}
+		</delete>
+	
+	</mapper>
